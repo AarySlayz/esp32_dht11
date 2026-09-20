@@ -19,8 +19,10 @@ void app_main(void)
 
 		if (result == ESP_OK)
 		{
-			ESP_LOGI(TAG, "Temperature: %.1f C, Humidity: %.1f %%",
-					 temperature, humidity);
+			float temperature_fahrenheit = temperature * 9.0f / 5.0f + 32.0f;
+
+			ESP_LOGI(TAG, "Temperature: %.1f F, Humidity: %.1f %%",
+					 temperature_fahrenheit, humidity);
 		}
 		else
 		{
